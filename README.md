@@ -12,5 +12,7 @@ Each table will correspond with a tempature sensor located in one location in th
 
 ### HTTP Structure
 The main component of the project is an API that will be built to collect the data from the tempature sensors.  
-The API can be called from any of the tempature sensors. Below is the structure of the HTTP request that will be sent from ther sensors.   
+The API can be called from any of the tempature sensors. Below is the structure of the HTTP request that will be sent from ther sensors:  
+  
+http://127.0.0.1:5000/__Tempature_Sensor__?__Date__=10102023&__Time__=2139&_Tempature__=76
   
