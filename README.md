@@ -1,4 +1,4 @@
-## This project is a template to how the Nia Lab Tempature Sensor Project will parse and store tempature date
+## Nia Lab Tempature Sensor Project 
 
 ### SQL Structure
 The project will contain one database with mutiple tables.  
