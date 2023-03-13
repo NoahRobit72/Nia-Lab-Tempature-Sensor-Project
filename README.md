@@ -16,8 +16,8 @@ The API can be called from any of the tempature sensors. Below is the structure 
   
 http //127.0.0.1:5000/__Tempature_Sensor__?__Date__=10102023&__Time__=2139&__Tempature__=76  
    
-__Tempature Sensor:__ Which tempature sensor in the lab the request is coming from  
-__Date:__ mm dd yr   
-__Time:__ Time of day in 24 hour clock  
-__Tempature:__ Tempature in celsius. 
+__Tempature Sensor (string):__ Which tempature sensor in the lab the request is coming from  
+__Date (int):__ mm dd yr   
+__Time (int):__ Time of day in 24 hour clock  
+__Tempature (int):__ Tempature in celsius. 
   
