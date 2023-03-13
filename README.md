@@ -1,4 +1,15 @@
 ## Nia Lab Tempature Sensor Project 
+## Hardware
+The hardware for the project will consit of a number of Adafruit HUZZAH32 - ESP32 Feather boards that will host the tempature sensors.  
+These will devices will act as clients and will send data via MQTT to a server hosted on a Rasberry Pi.  
+More work must be done to confirm the type of wireless server. 
+
+## Software: Option 1
+This first option consists of using MQTT communication to send data from the devices to the Rasberry Pi server. On the server, there will be a firebase NoSQL database that will host the tempature data. On the server, there will be a python script to request and analyze the python data.  
+
+
+## Software: Option 2
+This second option consists of using HTTPS request (URI) to send data from the ESP32 devices to the Rasberry Pi module. Once recieved on the Rasberry Pi module, a python script will parse the URI and post the data into a MySQL database.   
 
 ### SQL Structure
 The project will contain one database with mutiple tables.  
