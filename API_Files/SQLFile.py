@@ -16,14 +16,20 @@ print(mydb)
 # statements in 'Python'
 cursor = mydb.cursor()
 
-# cursor.execute("CREATE DATABASE geeks3")
+# Needs Error checkiing to not remake a database
+cursor.execute("CREATE DATABASE NiaLab_Tempature")
 
-cursor.execute("USE geeks3")
-cursor.execute("CREATE TABLE UserInfo (name VARCHAR(255), password VARCHAR(255))")
 
+cursor.execute("USE NiaLab_Tempature")
+
+# Needs error checing to not duplicate table
+cursor.execute("CREATE TABLE TEMP1 (Date_current INT, Time_current INT, Tempature INT)")
+cursor.execute("CREATE TABLE TEMP2 (Date_current INT, Time_current INT, Tempature INT)")
+               
+               
 # code to insert data into document
-sql = "INSERT INTO UserInfo (name, password) VALUES (%s, %s)"
-val = ("John", "Highway 21")
+sql = "INSERT INTO TEMP1 (Date, Time, Tempature) VALUES (%s, %d, %d)"
+val = (10102023, 2148, 74)
 cursor.execute(sql, val)
 mydb.commit()
 
