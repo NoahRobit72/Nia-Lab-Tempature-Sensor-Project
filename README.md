@@ -2,7 +2,7 @@
 ## Hardware
 The hardware for the project will consit of a number of Adafruit HUZZAH32 - ESP32 Feather boards that will host the tempature sensors.  
 
-## Software: Option 1
+## Software
 ### Software: Option 1
 This first option consists of using MQTT communication to send data from the devices to the Rasberry Pi server. On the server, there will be a firebase NoSQL database that will host the tempature data. On the server, there will be a python script to request and analyze the python data.  
 
