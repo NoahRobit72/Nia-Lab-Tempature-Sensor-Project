@@ -12,7 +12,10 @@ This option uses BLE Communication to send data from the client (esp32) to the s
 ### Software: Option 3
 This second option consists of using HTTPS request (URI) to send data from the ESP32 devices to the Rasberry Pi module. Once recieved on the Rasberry Pi module, a python script will parse the URI and post the data into a MySQL database.   
 
-### SQL Structure
+## Data Storage
+### File I/O: Option 1
+This project will input the data into a .txt file that can be read at a later time.
+### SQL: Option 2
 The project will contain one database with mutiple tables.  
 Each table will be for each tempature sensor. As an example, if there are five tempature sensors, there will be 5 tables.  
   
@@ -22,7 +25,12 @@ Each table will be structured as the following:
 Addationally the tables will follow the convention of temp_table_1...temp_table_2...  
 Each table will correspond with a tempature sensor located in one location in the lab
 
-### HTTP Structure
+## Data Protocol
+### MQTT: Option 1
+coming soon...  
+### BLE: Option 2
+coming soon...  
+### HTTP: Option 3
 The main component of the project is an API that will be built to collect the data from the tempature sensors.  
 The API can be called from any of the tempature sensors. Below is the structure of the HTTP request that will be sent from ther sensors:  
   
