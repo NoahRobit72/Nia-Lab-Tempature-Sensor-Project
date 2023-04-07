@@ -22,9 +22,15 @@ def on_message(client, userdata, msg):
     
 # def print value (value array)
     # stuff to print plot
-    
-#def init_plot
+  
+#initilize the file I/O and the plot
+#def init_Actions
     #inlilie plot with features 
+ 
+# def storeInFile(msg)
+    #fo = open("dataFile1.txt", "wb")
+    #fo.write( "msg+"\n")
+
 
 
 
