@@ -1,39 +1,49 @@
 import paho.mqtt.client as mqtt
+#import matplotlib.pyplot as plt
+import numpy as np
+import time
 
-mqtt_broker = "your_MQTT_BROKER_IP_ADDRESS"
 
-# add an empty string vector
+mqtt_broker = "192.168.1.125"
+
+# Create Clients
+client1 = "temp1"
+client2 = "temp2"
+
+
+f1 = open("dataFile1.txt", "wb")
+f2 = open("dataFile2.txt", "wb")
+
+## make empty numeric arrays
+temp1Data = []
+temp2Data = []
 
 def on_connect(client, userdata, flags, rc):
     print("Connected to MQTT Broker with result code "+str(rc))
-    #init_plot       inilize plot
-    client.subscribe("esp32/#")
+    client.subscribe(client1)
+    client.subscribe(client2)
+
+def print_message(sender, msg):
+    if(sender == client1):
+        f1.write(msg + "\n")
+    elif(sender == client2):
+        f2.write(msg + "\n")
+
+def add_to_array(sender, msg):
+    if(sender == client1):
+        temp1Data.append(float(msg))
+    elif(sender == client2):
+        temp2Data.append(float(msg))
+
 
 def on_message(client, userdata, msg):
-    print(msg.topic+" "+str(msg.payload))
-    #array.append(strToInt(msg.payload)        call function to turn string into data value. 
-    #storeInFile(strToInt(msg.payload))
-    #updatePlot(array name)
-    
-    
-# def function to turn the msg into a int value
-    # return a int
-
-    
-# def print value (value array)
-    # stuff to print plot
-  
-#initilize the file I/O and the plot
-#def init_Actions
-    #inlilie plot with features 
- 
-# def storeInFile(msg)
-    #fo = open("dataFile1.txt", "wb")
-    #fo.write( "msg+"\n")
+    print("The tempature from " + msg.topic + " is: " + msg.payload)
+    print_message(msg.topic, msg.payload)
+    add_to_array(msg.topic, msg.payload)
 
 
 
-
+            
 client = mqtt.Client()
 client.on_connect = on_connect
 client.on_message = on_message
@@ -41,3 +51,4 @@ client.on_message = on_message
 client.connect(mqtt_broker, 1883, 60)
 
 client.loop_forever()
+fo.close()
