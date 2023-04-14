@@ -42,7 +42,7 @@ void loop() {
   //Serial.println("ºC");
   char buffer[10];
   dtostrf(temperatureC, 4, 2, buffer);
-  client.publish("esp32/temp", buffer);
+  client.publish("temp1", buffer);
 
   delay(5000);
 }
