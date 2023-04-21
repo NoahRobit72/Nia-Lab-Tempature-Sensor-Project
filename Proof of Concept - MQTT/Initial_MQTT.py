@@ -29,8 +29,10 @@ def print_message(sender, msg):
     elif(sender == client2):
         f2.write(msg + "\n")
 
+# This function writes to a .txt file. It writes a string
 def add_to_array(sender, msg):
     if(sender == client1):
+        
         temp1Data.append(float(msg))
     elif(sender == client2):
         temp2Data.append(float(msg))

@@ -2,6 +2,9 @@
 #include <PubSubClient.h>
 #include <OneWire.h>
 #include <DallasTemperature.h>
+//
+// check the  client.publish("esp32/temp2", buffer);
+//
 
 const char* ssid = "Test";
 const char* password = "smartsys";
@@ -42,11 +45,7 @@ void loop() {
   //Serial.println("ºC");
   char buffer[10];
   dtostrf(temperatureC, 4, 2, buffer);
-<<<<<<<< HEAD:Proof of Concept - MQTT/Initial_MQTT/Initial_MQTT.ino
-  client.publish("temp1", buffer);
-========
-  client.publish("esp32/temp1", buffer);
->>>>>>>> c9c4e19a8830c9b450f5e70ec4f274ffe91e31c8:Proof of Concept - MQTT/Initial_MQTT_test1.ino
+  client.publish("esp32/temp2", buffer);
 
   delay(5000);
 }
